@@ -1,4 +1,4 @@
-import React from "react";
+const React = globalThis.React;
 
 function ExternalDemoWidget(props) {
   const settings = props?.settings || {};
