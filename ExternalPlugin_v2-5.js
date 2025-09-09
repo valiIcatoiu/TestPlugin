@@ -305,9 +305,9 @@ function initPlugin() {
 export default {
   name: "demo-plugin",
   version: "1.0.0",
-  widgets: [{ 
+  widget: { 
     type: "externalDemo", 
     component: ExternalDemoWidget 
-  }],
+  },
   init: initPlugin
 };
