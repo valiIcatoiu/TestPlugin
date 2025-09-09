@@ -1,17 +1,33 @@
-// ExternalPlugin.jsx
 import React from "react";
 
 function ExternalDemoWidget(props) {
-  const { settings = {}, context = {} } = props;
-  return (
-    <div style={{ border: "2px dashed #16a34a", padding: 12, borderRadius: 8 }}>
-      <strong>ExternalDemoWidget</strong>
-      <div style={{ fontSize: 12, marginTop: 6 }}>
-        tenant: {context.tenantId || "-"}
-        <br />
-        settings: {JSON.stringify(settings)}
-      </div>
-    </div>
+  const settings = props?.settings || {};
+  const context = props?.context || {};
+  return React.createElement(
+    "div",
+    {
+      style: {
+        border: "2px dashed #16a34a",
+        padding: "12px 14px",
+        borderRadius: "10px",
+        background: "#f0fdf4",
+        fontFamily: "system-ui, sans-serif",
+        lineHeight: 1.3
+      }
+    },
+    [
+      React.createElement("strong", { key: "t", style: { display: "block", marginBottom: 6 } }, "ExternalDemoWidget"),
+      React.createElement(
+        "div",
+        { key: "d", style: { fontSize: 12, opacity: 0.8 } },
+        "tenant: " + (context.tenantId || "-")
+      ),
+      React.createElement(
+        "div",
+        { key: "s", style: { fontSize: 12, opacity: 0.8, marginTop: 4 } },
+        "settings: " + JSON.stringify(settings)
+      )
+    ]
   );
 }
 
