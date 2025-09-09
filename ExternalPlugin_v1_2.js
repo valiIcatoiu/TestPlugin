@@ -4,6 +4,7 @@ function ExternalDemoWidget(props) {
   const settings = props?.settings || {};
   return React.createElement(
     "div",
+    {},
     [
       React.createElement("strong", { key: "t" }, "ExternalDemoWidget"),
       React.createElement("div", { key: "s", style: { fontSize: 12, marginTop: 6 } }, "settings: " + JSON.stringify(settings))
