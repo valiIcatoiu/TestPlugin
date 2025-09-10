@@ -16,7 +16,7 @@ function SimpleFetchWidget(props) {
     try {
       let result;
       if (bridge?.api?.get) {
-        result = await bridge.api.get(endpoint);
+        result = await bridge.api.get(endpoint+window.pageTarget?.ObjectId);
       } else {
         const r = await fetch(endpoint);
         if (!r.ok) throw new Error("HTTP " + r.status);
